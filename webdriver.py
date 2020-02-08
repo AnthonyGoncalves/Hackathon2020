@@ -9,11 +9,12 @@ class GroupMeBot:
         self.password = 'password'
         self.driver = webdriver.Chrome()
 
-        #Go to GroupMe.com!
+    def logIn(self):
+        # Go to GroupMe.com!
         self.driver.get('https://groupme.com')
         sleep(1)
 
-        #Clicks Log in
+        # Clicks Log in
         self.driver.find_element_by_xpath('/html/body/div[2]/div/div/p/a').click()
         sleep(1)
 
@@ -23,4 +24,8 @@ class GroupMeBot:
         self.driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[1]/div/form/button').click()
 
         sleep(100)
-GroupMeBot()
+
+    def addClient(self):
+        pass
+my_bot = GroupMeBot()
+my_bot.logIn()
