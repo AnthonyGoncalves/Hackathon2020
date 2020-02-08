@@ -1,5 +1,6 @@
 from selenium import webdriver
 from time import sleep
+import questionscript
 
 class GroupMeBot:
 
@@ -30,5 +31,9 @@ class GroupMeBot:
 
     def addClient(self):
         pass
+
+    def addToGroup(self):
+        pass
+
 my_bot = GroupMeBot()
 my_bot.logIn()
