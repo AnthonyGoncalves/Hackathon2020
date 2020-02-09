@@ -1,4 +1,4 @@
-# Hackathon2020
+# GroupMe+
 
 
 # Contributors
