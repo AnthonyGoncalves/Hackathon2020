@@ -2,7 +2,6 @@ from selenium import webdriver
 from time import sleep
 from pynput.keyboard import Key, Controller
 import json
-import questionscript
 #import client_data
 
 # Read in Json Info
@@ -91,7 +90,7 @@ class GroupMeBot:
         except Exception as e:
             print(f'[{self.name} IS NOT IN QUERY]', e)
 
-for i in range(len(client_data)):
-    my_bot = GroupMeBot()
-    my_bot.logIn()
-    my_bot.addClientToGroup(client_data[i][0], client_data[i][1], client_data[i][2])
+
+my_bot = GroupMeBot()
+my_bot.logIn()
+my_bot.addClientToGroup(client_data[0], client_data[1], client_data[2])
