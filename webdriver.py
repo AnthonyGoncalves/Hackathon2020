@@ -4,25 +4,34 @@ from pynput.keyboard import Key, Controller
 import questionscript
 #import client_data
 
+json_data = [
+    ['6314615017',
+     "Tom",
+     "Movies"]
+]
+def hitKey(key, amount):
 
-
-
+    keyboard = Controller()
+    if key == 'tab':
+        for i in range(amount):
+            keyboard.press('\t')
+            keyboard.release('\t')
+            sleep(.2)
+    elif key == 'enter':
+        for i in range(amount):
+            keyboard.press(Key.enter)
+            keyboard.release(Key.enter)
+            sleep(.2)
 class GroupMeBot:
 
-    def __init__(self ):
+    def __init__(self):
         # Bot info
         self.email = 'hackbubot@gmail.com'
         self.password = 'password'
         self.driver = webdriver.Chrome()
 
-        # Client info
-        self.name = 'Anthony'
-        self.phone_number = '9148605694'
-        self.pref = 'Video Games'
-
         # Bot Input
         self.keyboard = Controller()
-
 
     def logIn(self):
         try:
@@ -41,54 +50,49 @@ class GroupMeBot:
 
             sleep(1)
 
-
         except Exception as e:
             print('[EXCEPTION]', e)
 
-    def addClientToGroup(self):
+    def addClientToGroup(self, phone_num, name, preference):
+        try:
+            # Client info
+            self.num = phone_num
+            self.name = name
+            self.pref = preference
 
-        # Click Search Bar for pref
-        self.driver.find_element_by_xpath('/html/body/div[1]/aside/div[2]/div[2]/input').send_keys(self.pref)
-        sleep(0.2)
-        for i in range(2):
-            self.keyboard.press('\t')
-            self.keyboard.release('\t')
-        sleep(1)
-        self.keyboard.press(Key.enter)
-        self.keyboard.release(Key.enter)
-        sleep(1)
-        for i in range(17):
-            self.keyboard.press('\t')
-            self.keyboard.release('\t')
-            sleep(.2)
-        for i in range(2):
-            self.keyboard.press(Key.enter)
-            self.keyboard.release(Key.enter)
-        for i in range(4):
-            self.keyboard.press('\t')
-            self.keyboard.release('\t')
+            # Click Search Bar for pref
+            self.driver.find_element_by_xpath('/html/body/div[1]/aside/div[2]/div[2]/input').send_keys(self.pref)
+            sleep(0.2)
+            hitKey('tab', 2)
+            sleep(1)
+            hitKey('enter', 1)
+            sleep(1)
+            hitKey('tab', 17)
+            hitKey('enter', 2)
+            hitKey('tab', 4)
+            hitKey('enter', 1)
+            sleep(1)
+            self.keyboard.type(self.num)
+            sleep(2)
+            self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div[3]/div[2]/button').click()
             sleep(.5)
-        self.keyboard.press(Key.enter)
-        self.keyboard.release(Key.enter)
-        sleep(1)
-        self.keyboard.type(self.phone_number)
-        sleep(2)
-        self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div[3]/div[2]/button').click()
-        sleep(.5)
-        self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div/form/div[1]/div[1]/input').send_keys(self.name)
-        '''for i in range(2):
-            self.keyboard.press('\t')
-            self.keyboard.release('\t')
-            sleep(.2)'''
-        # Add
-        sleep(1)
-        self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div/form/div[2]/button').click()
-        sleep(1)
-        # Add 1 member
-        self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[3]/button').click()
+            self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div/form/div[1]/div[1]/input').send_keys(self.name)
+            # Add
+            sleep(1)
+            self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div/form/div[2]/button').click()
+            sleep(1)
+            # Add 1 member
+            self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[3]/button').click()
+            sleep(.5)
+            self.driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[1]/div/div[2]/div/div[2]/div/div[1]/div[1]/div')\
+                .send_keys(f"Welcome to the {self.pref} Group, {self.name}! Introduce yourself to the Group! \n")
+            sleep(.5)
 
-        sleep(.5)
 
-my_bot = GroupMeBot()
-my_bot.logIn()
-my_bot.addClientToGroup()
+        except Exception as e:
+            print(f'[{self.name} IS NOT IN QUERY]', e)
+
+for i in range(len(json_data)):
+    my_bot = GroupMeBot()
+    my_bot.logIn()
+    my_bot.addClientToGroup(json_data[i][0], json_data[i][1], json_data[i][2])
