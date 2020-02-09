@@ -22,7 +22,7 @@ def form():
 		user = request.form.get('fname')
 		number = request.form.get('phone')
 		userData = []
-
+		print (code)
 		userData.append([str(number),str(user)])
 		with open('client_data.json', 'w') as f:
 			json.dump(userData, f)
@@ -35,10 +35,30 @@ def form():
 def user(usr):
 	return "<h1>{usr}</h1>"
 
-@app.route("/Popular")
+@app.route("/Popular", methods=['POST', 'GET'])
 def gang():
-	if request
-	return render_template("PopularPage.HTML")
+	if request.method == 'POST':
+		dict = {"1":"Sports","2":"Fashion","3":"Movies","4":"Food",
+		"5":"Music", "6":"Videogames", "7":"Languages","8":"Coding" }
+		sports = request.form.get('front')
+		fashion = request.form.get('fash')
+		movie = request.form.get('movies')
+		food = request.form.get('food')
+		music = request.form.get('music')
+		vg = request.form.get('vgames')
+		lang = request.form.get('lang')
+		code = request.form.get('code')
+		user = request.form.get('fname')
+		number = request.form.get('phone')
+		pref = None
+		whichOne = [sports, fashion, movie, food, music, vg, lang, code]
+		for i in whichOne:
+			if whichOne[i] > 0:
+				pref = dict[str(whichOne[i])]
+		print(pref)
+
+	else:	
+		return render_template("PopularPage.HTML")
 
 #@app.route("/info", methods=['POST', 'GET'])
 #def jackpot():
