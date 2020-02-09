@@ -7,8 +7,12 @@ app = Flask(__name__)
 def home():
     return render_template("StartPage.HTML")
 
-@app.route("/filloutform")
+@app.route("/filloutform", methods = ['POST', 'GET'])
 def form():
+	if request.method == 'POST':
+		football = request.form.get('language')
+		return render_template("StartPage.HTML")
+
     return render_template("FormPage.HTML")
 
 @app.route("/info", methods=['POST'])
