@@ -40,8 +40,8 @@ def user(usr):
 @app.route("/Popular", methods=['POST', 'GET'])
 def gang():
 	if request.method == 'POST':
-		dict = {"1":"Sports","2":"Fashion","3":"Movies","4":"Food",
-		"5":"Music", "6":"Videogames", "7":"Languages","8":"Coding" }
+		dict = {"1":"Sport","2":"Fashion","3":"Movies","4":"Food",
+		"5":"Music", "6":"Video game", "7":"Languages","8":"Coding" }
 		sports = request.form.get('front')
 		fashion = request.form.get('fash')
 		movie = request.form.get('movies')
