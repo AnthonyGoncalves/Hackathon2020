@@ -1,7 +1,7 @@
-### Hackathon2020
-HACKBU
+# Hackathon2020
 
-#Contributers
+
+# Contributers
 Rich Imbro - back end / Front end designer
 Anthony Goncalves- front end designer
 Thomas Fasano - backend / Bot designer
