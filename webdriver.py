@@ -1,14 +1,13 @@
 from selenium import webdriver
 from time import sleep
 from pynput.keyboard import Key, Controller
+import json
 import questionscript
 #import client_data
 
-json_data = [
-    ['6314615017',
-     "Tom",
-     "Movies"]
-]
+# Read in Json Info
+client_data = json.load(open('client_data.json', 'r'))
+
 def hitKey(key, amount):
 
     keyboard = Controller()
@@ -92,7 +91,7 @@ class GroupMeBot:
         except Exception as e:
             print(f'[{self.name} IS NOT IN QUERY]', e)
 
-for i in range(len(json_data)):
+for i in range(len(client_data)):
     my_bot = GroupMeBot()
     my_bot.logIn()
-    my_bot.addClientToGroup(json_data[i][0], json_data[i][1], json_data[i][2])
+    my_bot.addClientToGroup(client_data[i][0], client_data[i][1], client_data[i][2])
