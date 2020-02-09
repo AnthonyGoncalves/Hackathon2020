@@ -10,9 +10,11 @@ def home():
 @app.route("/filloutform", methods=['POST', 'GET'])
 def form():
 	if request.method == 'POST':
-		print(request.form.get('front'))
+		x = request.form.get('front')
+		print(x)
 		return 'Done'
-	return render_template("FormPage.HTML")
+	else:
+		return render_template("FormPage.HTML")
 
 #@app.route("/info", methods=['POST', 'GET'])
 #def jackpot():
