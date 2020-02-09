@@ -84,7 +84,8 @@ class GroupMeBot:
             sleep(1)
             self.driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[1]/div/div[2]/div/div[2]/div/div[1]/div[1]/div')\
                 .send_keys(f"Welcome to the {self.pref} Group, {self.name}! Introduce yourself to the Group! \n")
-            sleep(5)
+            sleep(3)
+            self.driver.close()
 
 
         except Exception as e:
