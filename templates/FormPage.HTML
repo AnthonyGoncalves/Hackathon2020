@@ -38,7 +38,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </header>
 
 <div class>
-	<form action="info.json" target="_blank" method="post" class ="w3-container w3-center">
+	<form action="/info" method="post" class ="w3-container w3-center">
 		<h1>Chatroom Suggestion Personalisation Form</h1>
 		<p class="w3-center">Tell us a little about yourself!</p>
 		<table class = "center-div">
@@ -51,38 +51,38 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 			</tr>
 			<tr>
 				<td class="first-col">How interested in sports are you?</td>
-				<td><input type="radio" value="none" name="front" /></td>
-				<td><input type="radio" value="none" name="front" /></td>
-				<td><input type="radio" value="none" name="front" /></td>
-				<td><input type="radio" value="none" name="front" /></td>
+				<td><input type="radio" value="4" name="front" /></td>
+				<td><input type="radio" value="3" name="front" /></td>
+				<td><input type="radio" value="2" name="front" /></td>
+				<td><input type="radio" value="1" name="front" /></td>
 			</tr>
 			<tr>
-				<td class="first-col">How interested in fashion are you?</td>
-				<td><input type="radio" value="none" name="name" /></td>
-				<td><input type="radio" value="none" name="name" /></td>
-				<td><input type="radio" value="none" name="name" /></td>
-				<td><input type="radio" value="none" name="name" /></td>
+				<td class="second-col">How interested in fashion are you?</td>
+				<td><input type="radio" value="4" name="name" /></td>
+				<td><input type="radio" value="3" name="name" /></td>
+				<td><input type="radio" value="2" name="name" /></td>
+				<td><input type="radio" value="1" name="name" /></td>
 			</tr>
 			<tr>
-				<td class="first-col">How interested in food are you?</td>
-				<td><input type="radio" value="none" name="find" /></td>
-				<td><input type="radio" value="none" name="find" /></td>
-				<td><input type="radio" value="none" name="find" /></td>
-				<td><input type="radio" value="none" name="find" /></td>
+				<td class="third-col">How interested in food are you?</td>
+				<td><input type="radio" value="4" name="find" /></td>
+				<td><input type="radio" value="3" name="find" /></td>
+				<td><input type="radio" value="2" name="find" /></td>
+				<td><input type="radio" value="1" name="find" /></td>
 			</tr>
 			<tr>
-				<td class="first-col">How interested in music are you?</td>
-				<td><input type="radio" value="none" name="keeping" /></td>
-				<td><input type="radio" value="none" name="keeping" /></td>
-				<td><input type="radio" value="none" name="keeping" /></td>
-				<td><input type="radio" value="none" name="keeping" /></td>
+				<td class="fourth-col">How interested in music are you?</td>
+				<td><input type="radio" value="4" name="keeping" /></td>
+				<td><input type="radio" value="3" name="keeping" /></td>
+				<td><input type="radio" value="2" name="keeping" /></td>
+				<td><input type="radio" value="1" name="keeping" /></td>
 			</tr>￼
 			<tr>
-				<td class="first-col">How interested in videogames are you?</td>
-				<td><input type="radio" value="none" name="ambiance" /></td>
-				<td><input type="radio" value="none" name="ambiance" /></td>
-				<td><input type="radio" value="none" name="ambiance" /></td>
-				<td><input type="radio" value="none" name="ambiance" /></td>
+				<td class="fifth-col">How interested in videogames are you?</td>
+				<td><input type="radio" value="4" name="ambiance" /></td>
+				<td><input type="radio" value="3" name="ambiance" /></td>
+				<td><input type="radio" value="2" name="ambiance" /></td>
+				<td><input type="radio" value="1" name="ambiance" /></td>
 			</tr>
 		</table>
         <br>
@@ -93,7 +93,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
           <label for="lname">Phone Number ((###)-###-####): </label><input type="text" id="phone" name="phone"><br><br>
 
 		<div class="btn-block">
-			<button type="submit" href="/">Submit</button>
+			<button type="submit" href="/info">Submit</button>
 		</div>
 	</form>
 </div>

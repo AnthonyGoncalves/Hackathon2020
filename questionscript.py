@@ -11,5 +11,11 @@ def home():
 def form():
     return render_template("FormPage.HTML")
 
+@app.route("/info", methods=['POST'])
+def jackpot():
+    return render_template("info.json")
+
+
+
 if  __name__ == "__main__":
     app.run()
