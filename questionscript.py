@@ -28,6 +28,10 @@ def form():
 def user(usr):
 	return "<h1>{usr}</h1>"
 
+@app.route("/Popular")
+def gang():
+	return render_template("PopularPage.HTML")
+
 #@app.route("/info", methods=['POST', 'GET'])
 #def jackpot():
 	#return render_template("info.json")
