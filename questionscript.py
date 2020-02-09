@@ -20,6 +20,11 @@ def form():
 		lang = request.form.get('lang')
 		code = request.form.get('code')
 		user = request.form.get('fname')
+		number = request.form.get('phone')
+		client_data = []
+
+		client_data.append([str(number),str(user)])
+		json.dump(open('client_data', 'w'))
 		return redirect(url_for("user",usr = user))
 	else:
 		return render_template("FormPage.HTML")
