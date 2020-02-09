@@ -21,10 +21,12 @@ def form():
 		code = request.form.get('code')
 		user = request.form.get('fname')
 		number = request.form.get('phone')
-		client_data = []
+		userData = []
 
-		client_data.append([str(number),str(user)])
-		json.dump(open('client_data', 'w'))
+		userData.append([str(number),str(user)])
+		with open('client_data.json', 'w') as f:
+			json.dump(userData, f)
+
 		return redirect(url_for("user",usr = user))
 	else:
 		return render_template("FormPage.HTML")
@@ -35,6 +37,7 @@ def user(usr):
 
 @app.route("/Popular")
 def gang():
+	if request
 	return render_template("PopularPage.HTML")
 
 #@app.route("/info", methods=['POST', 'GET'])
