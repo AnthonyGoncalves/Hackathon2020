@@ -1,6 +1,8 @@
 import requests
 import json
 from flask import Flask, redirect, url_for, render_template, request
+from webdriver import GroupMeBot
+
 
 app = Flask(__name__)
 
@@ -50,14 +52,19 @@ def gang():
 		code = request.form.get('code')
 		user = request.form.get('fname')
 		number = request.form.get('phone')
-		pref = None
+
+		pref = ""
 		whichOne = [sports, fashion, movie, food, music, vg, lang, code]
 		for i in whichOne:
-			if whichOne[i] > 0:
-				pref = dict[str(whichOne[i])]
-		print(pref)
+			if i != None:
+				pref = dict[str(i)]
+		if pref != "":
+			my_bot = GroupMeBot()
+			my_bot.logIn()
+			my_bot.addClientToGroup(str(number), str(user), str(pref))
+		return render_template("PopularPage.HTML")
 
-	else:	
+	else:
 		return render_template("PopularPage.HTML")
 
 #@app.route("/info", methods=['POST', 'GET'])

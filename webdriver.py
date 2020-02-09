@@ -5,7 +5,7 @@ import json
 #import client_data
 
 # Read in Json Info
-client_data = json.load(open('client_data.json', 'r'))
+#client_data = json.load(open('client_data.json', 'r'))
 
 def hitKey(key, amount):
 
@@ -88,9 +88,4 @@ class GroupMeBot:
 
 
         except Exception as e:
-            print(f'[{self.name} IS NOT IN QUERY]', e)
-
-
-my_bot = GroupMeBot()
-my_bot.logIn()
-my_bot.addClientToGroup(client_data[0], client_data[1], client_data[2])
+            print(f'[{self.name} IS NOT ON FILE]', e)
