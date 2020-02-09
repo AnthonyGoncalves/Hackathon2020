@@ -1,4 +1,5 @@
 import requests
+import json
 from flask import Flask, redirect, url_for, render_template, request
 
 app = Flask(__name__)
@@ -10,11 +11,22 @@ def home():
 @app.route("/filloutform", methods=['POST', 'GET'])
 def form():
 	if request.method == 'POST':
-		x = request.form.get('front')
-		print(x)
-		return 'Done'
+		sports = request.form.get('front')
+		fashion = request.form.get('name')
+		movie = request.form.get('movie')
+		food = request.form.get('find')
+		music = request.form.get('keeping')
+		vg = request.form.get('ambiance')
+		lang = request.form.get('lang')
+		code = request.form.get('code')
+		user = request.form.get('fname')
+		return redirect(url_for("user",usr = user))
 	else:
 		return render_template("FormPage.HTML")
+
+@app.route("/<usr>")
+def user(usr):
+	return "<h1>{usr}</h1>"
 
 #@app.route("/info", methods=['POST', 'GET'])
 #def jackpot():
