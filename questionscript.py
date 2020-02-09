@@ -5,21 +5,17 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-	return render_template("StartPage.HTML")
+    return render_template("StartPage.HTML")
 
-@app.route("/filloutform", methods = ['POST', 'GET'])
+@app.route("/filloutform")
 def form():
-	if request.method == 'POST':
-		football = request.form.get('How interested in sports are you?')
-		return '<h1>If this doesnt say a number IM gonna fucking kill myself: {}</h1>'.format(football)
+    return render_template("FormPage.HTML")
 
-	return render_template("FormPage.HTML")
-
-@app.route("/info", methods=['POST'])
+@app.route("/info", methods=['POST', 'GET'])
 def jackpot():
-	return render_template("info.json")
+    return render_template("info.json")
 
 
 
 if  __name__ == "__main__":
-	app.run()
+    app.run()
