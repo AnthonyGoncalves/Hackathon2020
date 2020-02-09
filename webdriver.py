@@ -20,7 +20,7 @@ class GroupMeBot:
             self.driver.find_element_by_xpath('/html/body/div[2]/div/div/p/a').click()
             sleep(1)
 
-            #Enters email and password, then clicks Log in!
+            # Enters email and password, then clicks Log in!
             self.driver.find_element_by_xpath("/html/body/div[1]/div[1]/div[1]/div/form/div[1]/input").send_keys(self.email)
             self.driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[1]/div/form/div[2]/input').send_keys(self.password)
             self.driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[1]/div/form/button').click()
