@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-blue w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-purple w3-hover-white">Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-blue w3-hover-white">Popular Groups</a>
+    <a href="/filloutform" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-blue w3-hover-white">Fill Out A Form</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-purple w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">The Popular Page!</h1>
+  <p class="w3-xlarge">Discover new groupshere!</p>
+</header>
+
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      <img src="download.jpeg" alt="Sandwich" style="width:100%">
+      <h3>Sports Group</h3>
+      <p>Do you enjoy sports? Join this group to discuss recent games, your favorite teams, or debate rivals!</p>
+      <button class="w3-button w3-black w3-padding-small w3-small ">Click to Join</button>
+    </div>
+    <div class="w3-quarter">
+      <img src="food.jpg" alt="Steak" style="width:100%">
+      <h3>Food Group</h3>
+      <p>Do you like steak? Salad? Dessert?  Discuss cooking and food choices here!</p>
+      <button class="w3-button w3-black w3-padding-small w3-small ">Click to Join</button>
+    </div>
+    <div class="w3-quarter">
+      <img src="videogames.jpeg" alt="Cherries" style="width:100%">
+      <h3>Video Games Group</h3>
+      <p>Whether its  Fortnite or Call  of Duty, join this group to  discuss the  newst trends in the gaming world!</p>
+      <button class="w3-button w3-black w3-padding-small w3-small ">Click to Join</button>
+    </div>
+    <div class="w3-quarter">
+      <img src="movies.png" alt="Pasta and Wine" style="width:100%">
+      <h3>Movies</h3>
+      <p>Batman, Adam Sandler, and Leonardo  DiCaprio are all topics of discussion in this group! Join now to discuss!</p>
+      <button class="w3-button w3-black w3-padding-small w3-small ">Click to Join</button>
+    </div>
+  </div>
+
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="music.jpg" alt="Popsicle" style="width:100%">
+      <h3>Music  Group</h3>
+      <p>From country to jazz, every music group is welcomed into this group! Join now to talk about all your favorite hits!</p>
+      <button class="w3-button w3-black w3-padding-small w3-small ">Click to Join</button>
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/salmon.jpg" alt="Salmon" style="width:100%">
+      <h3>Fashion Group</h3>
+      <p>Gucci or  Prada? Discuss nam brands and pick outfits in this group!</p>
+      <button class="w3-button w3-black w3-padding-small w3-small ">Click to Join</button>
+    </div>
+    <div class="w3-quarter">
+      <img src="lang.jpeg" alt="Sandwich" style="width:100%">
+      <h3>Languages</h3>
+      <p>Hllo! Hola! Bonjour! Speak and learn new languages with this group!</p>
+      <button class="w3-button w3-black w3-padding-small w3-small ">Click to Join</button>
+
+    </div>
+    <div class="w3-quarter">
+      <img src="/w3images/croissant.jpg" alt="Croissant" style="width:100%">
+      <h3>Le French</h3>
+      <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <button class="w3-button w3-black w3-padding-small w3-small ">Click to Join</button>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
+
+  <hr id="about">
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">
+  <div class="w3-xlarge w3-padding-32">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+ </div>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
